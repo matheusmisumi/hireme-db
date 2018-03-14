@@ -1,3 +1,3 @@
 # pi-5-db
 
-![diagram](./diagrama.png)
+![diagram](./diagrama.PNG)
