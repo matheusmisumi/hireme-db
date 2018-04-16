@@ -175,7 +175,7 @@ CREATE TABLE `usuario` (
   `CPFUsuario` varchar(50) NOT NULL,
   `celularUsuario` varchar(50) NOT NULL,
   `tokenCartaoUsuario` varchar(255) NOT NULL,
-  `nascimentoUsuario` datetime NOT NULL
+  `nascimentoUsuario` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
