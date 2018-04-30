@@ -8,6 +8,7 @@ CREATE TABLE usuario (
   celularUsuario VARCHAR(50) NOT NULL,
   tokenCartaoUsuario VARCHAR(255) NOT NULL,
   nascimentoUsuario DATE NOT NULL,
+  ativoUsuario BIT NOT NULL,
   PRIMARY KEY (idUsuario)
 )
 
@@ -18,6 +19,8 @@ CREATE TABLE endereco (
   complementoEndereco VARCHAR(50) NOT NULL,
   estadoEndereco VARCHAR(50) NOT NULL,
   cidadeEndereco VARCHAR(50) NOT NULL,
+  latitudeEndereco BIGINT NOT NULL,
+  longitudeEndereco BIGINT NOT NULL,
   numeroEndereco INT NOT NULL,
   CEPEndereco INT NOT NULL,
   idUsuario INT NOT NULL,
