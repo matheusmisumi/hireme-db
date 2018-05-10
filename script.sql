@@ -100,6 +100,7 @@ CREATE TABLE transacao (
 
 CREATE TABLE pedido (
   idPedido INT NOT NULL AUTO_INCREMENT,
+  confirmadoPedido BIT NOT NULL,
   idUsuario INT NOT NULL,
   statusUsuario VARCHAR(50) NOT NULL,
   idPrestador INT NOT NULL,
