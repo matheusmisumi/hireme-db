@@ -10,7 +10,7 @@ CREATE TABLE usuario (
   nascimentoUsuario DATE NOT NULL,
   ativoUsuario BIT NOT NULL,
   PRIMARY KEY (idUsuario)
-)
+);
 
 CREATE TABLE endereco (
   idEndereco INT NOT NULL AUTO_INCREMENT,
@@ -26,7 +26,7 @@ CREATE TABLE endereco (
   idUsuario INT NOT NULL,
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   PRIMARY KEY (idEndereco)
-)
+);
 
 CREATE TABLE dadosBancario (
   idDadosBancario INT NOT NULL AUTO_INCREMENT,
@@ -35,7 +35,7 @@ CREATE TABLE dadosBancario (
   tipoDocumentoDadosBancario VARCHAR(4),
   documentoDadosBancario INT NOT NULL,
   PRIMARY KEY (idDadosBancario)
-)
+);
 
 CREATE TABLE prestador (
   idPrestador INT NOT NULL AUTO_INCREMENT,
@@ -48,13 +48,13 @@ CREATE TABLE prestador (
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   FOREIGN KEY (idEndereco) REFERENCES endereco(idEndereco),
   PRIMARY KEY (idPrestador)
-)
+);
 
 CREATE TABLE categoria (
   idCategoria INT NOT NULL AUTO_INCREMENT,
   nomeCategoria VARCHAR(50) NOT NULL,
   PRIMARY KEY (idCategoria)
-)
+);
 
 CREATE TABLE servico (
   idServico INT NOT NULL AUTO_INCREMENT,
@@ -65,7 +65,7 @@ CREATE TABLE servico (
   FOREIGN KEY (idPrestador) REFERENCES prestador(idPrestador),
   FOREIGN KEY (idCategoria) REFERENCES categoria(idCategoria),
   PRIMARY KEY (idServico)
-)
+);
 
 CREATE TABLE avaliacao (
   idAvaliacao INT NOT NULL AUTO_INCREMENT,
@@ -77,7 +77,7 @@ CREATE TABLE avaliacao (
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   FOREIGN KEY (idPrestador) REFERENCES prestador(idPrestador),
   PRIMARY KEY (idAvaliacao)
-)
+);
 
 CREATE TABLE anuncio (
   idAnuncio INT NOT NULL AUTO_INCREMENT,
@@ -86,7 +86,7 @@ CREATE TABLE anuncio (
   idUsuario INT NOT NULL,
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   PRIMARY KEY (idAnuncio)
-)
+);
 
 CREATE TABLE transacao (
   idTransacao INT NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,7 @@ CREATE TABLE transacao (
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   FOREIGN KEY (idPrestador) REFERENCES prestador(idPrestador),
   PRIMARY KEY (idTransacao)
-)
+);
 
 CREATE TABLE pedido (
   idPedido INT NOT NULL AUTO_INCREMENT,
@@ -107,7 +107,7 @@ CREATE TABLE pedido (
   FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
   FOREIGN KEY (idPrestador) REFERENCES prestador(idPrestador),
   PRIMARY KEY (idPedido)
-)
+);
 
 CREATE TABLE itemPedido (
   idItemPedido INT NOT NULL AUTO_INCREMENT,
@@ -116,4 +116,4 @@ CREATE TABLE itemPedido (
   FOREIGN KEY (idPedido) REFERENCES pedido(idPedido),
   FOREIGN KEY (idServico) REFERENCES servico(idServico),
   PRIMARY KEY (idItemPedido)
-)
+);
